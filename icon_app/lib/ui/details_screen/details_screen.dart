@@ -123,6 +123,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 style: TextStyle(
                     color: Color(0xff919191),
                     fontSize: 16.0,
+                    fontFamily: "Bebas_Neue",
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -482,6 +483,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30),
               child: DefaultButton(
                 text: ("Next"),
+                color: kColorPrimary,
                 height: 56,
                 fontSize: 18,
                 radius: 28,

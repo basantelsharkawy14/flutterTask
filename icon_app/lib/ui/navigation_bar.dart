@@ -1,11 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_app/ui/branches_screen/branches_screen.dart';
+import 'package:icon_app/ui/find_food_screen.dart';
 import 'package:icon_app/ui/help/constants.dart';
 import 'package:icon_app/ui/home_screens/home_screen.dart';
 
 class NavigationBar extends StatefulWidget {
-  const NavigationBar({Key? key}) : super(key: key);
+  const NavigationBar({Key? key, required this.loc}) : super(key: key);
+  final String loc;
 
   @override
   _NavigationBarState createState() => _NavigationBarState();
@@ -17,7 +19,7 @@ class _NavigationBarState extends State<NavigationBar> {
     return Scaffold(
         body: Navigator(
           onGenerateRoute: (settings) {
-            Widget page = MapScreen();
+            Widget page = MapScreen(loc: widget.loc,);
             if (settings.name == 'home') page = HomeScreen();
             return MaterialPageRoute(builder: (_) => page);
           },

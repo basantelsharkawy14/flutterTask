@@ -10,14 +10,15 @@ class DefaultButton extends StatelessWidget {
     required this.press,
     required this.height,
     required this.fontSize,
-    required this.radius
+    required this.radius,
+    required this.color
   }) : super(key: key);
   final String text;
   final GestureTapCancelCallback press;
   final double height;
   final double fontSize;
   final double radius;
-
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class DefaultButton extends StatelessWidget {
       height: (height),
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
-        color: kColorPrimary,
+        color: color,
         onPressed: press,
         child: Text(
           text,

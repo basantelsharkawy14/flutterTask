@@ -12,7 +12,7 @@ class FindFood extends StatefulWidget {
 
 class _FindFoodState extends State<FindFood> {
   String? lang;
-  String? branch;
+  String ?branch ;
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {"image": "assets/images/Deliveryvector.png"},
@@ -130,13 +130,13 @@ class _FindFoodState extends State<FindFood> {
                                 isExpanded: true,
                                 items: [
                                   DropdownMenuItem(
-                                      child: Text("loc1"), value: "loc1"),
+                                      child: Text("Riyadh"), value: "Riyadh"),
                                   DropdownMenuItem(
-                                      child: Text("loc2"), value: "loc2"),
+                                      child: Text("Jeddah"), value: "Jeddah"),
                                 ],
                                 onChanged: (newValue) {
                                   setState(() {
-                                    branch = newValue;
+                                     branch = newValue;
                                   });
                                 },
                               ),
@@ -145,7 +145,7 @@ class _FindFoodState extends State<FindFood> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            helpNavigateTo(context, NavigationBar());
+                            helpNavigateTo(context, NavigationBar(loc: branch != null?( branch == "Riyadh"? "Riyadh":"Jeddah"): "Riyadh",));
                           },
                           child: Container(
                             margin: EdgeInsets.only(left: 25),
